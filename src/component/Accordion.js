@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 
 function Accordion({ items }) {
-  const [expandedIndex, setExpandedIndex] = useState(0);
+  const [expandedIndex, setExpandedIndex] = useState(2);
+
+  const handleClick = (nextIndex) => {
+    setExpandedIndex(nextIndex);
+  };
 
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex;
@@ -9,7 +13,7 @@ function Accordion({ items }) {
 
     return (
       <div key={item.id}>
-        <div>{item.label}</div>
+        <div onClick={() => handleClick(index)}>{item.label}</div>
         {isExpanded && <div>{item.content}</div>}
       </div>
     );
