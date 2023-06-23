@@ -4,7 +4,7 @@ import Dropdown from "./component/Dropdown";
 function App() {
   const [selection, setSelection] = useState(null);
 
-  const handleSelection = (option) => {
+  const handleSelect = (option) => {
     setSelection(option);
   };
 
@@ -14,11 +14,7 @@ function App() {
     { label: "Blue", value: "blue" },
   ];
   return (
-    <Dropdown
-      options={options}
-      selection={selection}
-      onSelect={handleSelection}
-    />
+    <Dropdown options={options} selection={selection} onSelect={handleSelect} />
   );
 }
 
