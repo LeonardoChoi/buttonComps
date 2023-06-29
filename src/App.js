@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Dropdown from "./component/Dropdown";
+import { useState } from 'react';
+import Dropdown from './components/Dropdown';
 
 function App() {
   const [selection, setSelection] = useState(null);
@@ -9,12 +9,16 @@ function App() {
   };
 
   const options = [
-    { label: "Red", value: "red" },
-    { label: "Green", value: "green" },
-    { label: "Blue", value: "blue" },
+    { label: 'Red', value: 'red' },
+    { label: 'Green', value: 'green' },
+    { label: 'Blue', value: 'blue' },
   ];
+
   return (
-    <Dropdown options={options} value={selection} onChange={handleSelect} />
+    <div className="flex">
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+    </div>
   );
 }
 
